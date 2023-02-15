@@ -2,7 +2,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 
 import { load } from '../../constants/LS';
-import { getById, getYouTube } from '../../services/moviesAPI';
+import { getById } from '../../services/moviesAPI';
 import GoBack from '../../components/GoBack/GoBack';
 import YouTube from '../../components/YouTube/YouTube';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
@@ -10,12 +10,9 @@ import css from './movie-details.module.scss';
 
 const MovieDetails = () => {
   const location = useLocation();
-
   const { moviedId } = useParams();
 
   const [movieInfo, setMovieInfo] = useState({});
-  // eslint-disable-next-line no-unused-vars
-  const [youTube, setYouTube] = useState('');
   const [backdrop, setBackdrop] = useState('');
 
   useEffect(() => {
@@ -26,8 +23,6 @@ const MovieDetails = () => {
         });
         const response = await getById(moviedId);
         setMovieInfo(response);
-        const responseYouTube = await getYouTube(moviedId);
-        setYouTube(responseYouTube);
         setBackdrop(response['backdrop_path']);
         Loading.remove();
       } catch (error) {

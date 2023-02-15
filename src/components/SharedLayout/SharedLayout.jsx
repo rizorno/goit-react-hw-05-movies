@@ -41,18 +41,18 @@ const SharedLayout = () => {
 
       <Suspense follback={<div className={css['box-loading']}>Loading...</div>}>
         <Outlet />
-      </Suspense>
 
-      <footer className={css.footer}>
-        <div className={css['footer-container']}>
-          <p className={css['footer__text']}>
-            &#169; 2023 | All Rights Reserved |
-            <span className={css['footer__text--span']}>
-              Created by Mykhailo PASHKO
-            </span>
-          </p>
-        </div>
-      </footer>
+        <footer className={css.footer}>
+          <div className={css['footer-container']}>
+            <p className={css['footer__text']}>
+              &#169; 2023 | All Rights Reserved |
+              <span className={css['footer__text--span']}>
+                Created by Mykhailo PASHKO
+              </span>
+            </p>
+          </div>
+        </footer>
+      </Suspense>
     </div>
   );
 };

@@ -26,7 +26,12 @@ const YouTube = ({ backdrop }) => {
           setYouTube(response.results[0].key);
         }
 
-        if (response.results.length === 0 || response.results[0].key === '') {
+        if (
+          response.results === [] ||
+          response.results.length === 0 ||
+          response.results[0].key === '' ||
+          response.results[0].key === undefined
+        ) {
           Notify.failure(
             'Sorry, there are no teaser matching your search query. Please try again later.'
           );
