@@ -16,6 +16,7 @@ const MovieDetails = () => {
   const [movieInfo, setMovieInfo] = useState({});
   // eslint-disable-next-line no-unused-vars
   const [youTube, setYouTube] = useState('');
+  const [backdrop, setBackdrop] = useState('');
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -27,6 +28,7 @@ const MovieDetails = () => {
         setMovieInfo(response);
         const responseYouTube = await getYouTube(moviedId);
         setYouTube(responseYouTube);
+        setBackdrop(response['backdrop_path']);
         Loading.remove();
       } catch (error) {
         console.log(error);
@@ -166,7 +168,7 @@ const MovieDetails = () => {
                 {String(release_date).slice(0, 4)}
               </p>
               <p className={(css['title-type'], css['g1'])}>
-                <YouTube />
+                <YouTube backdrop={backdrop} />
               </p>
             </div>
 

@@ -5,7 +5,7 @@ import Iframe from 'react-iframe';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import css from './modal-teaser.module.scss';
 
-const ModalTeaser = ({ youtube, onCloseTeaser }) => {
+const ModalTeaser = ({ youtube, onCloseTeaser, backdrop }) => {
   useEffect(() => {
     const closeBtnEscBackdrop = ({ target, currentTarget, code }) => {
       if (code === 'Escape' || target === currentTarget) {
@@ -31,7 +31,13 @@ const ModalTeaser = ({ youtube, onCloseTeaser }) => {
   });
 
   const template = (
-    <div className={css.overlay} onClick={closeBtnEscBackdrop}>
+    <div
+      className={css.overlay}
+      onClick={closeBtnEscBackdrop}
+      style={{
+        backgroundImage: `url(https://image.tmdb.org/t/p/original/${backdrop})`,
+      }}
+    >
       <div className={css['video-modal']}>
         <button
           type="button"
@@ -62,6 +68,7 @@ const ModalTeaser = ({ youtube, onCloseTeaser }) => {
 
 ModalTeaser.propTypes = {
   youtube: PropTypes.string.isRequired,
+  backdrop: PropTypes.string.isRequired,
   onCloseTeaser: PropTypes.func.isRequired,
 };
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { getYouTube } from '../../services/moviesAPI';
 import ModalTeaser from '../ModalTeaser/ModalTeaser';
@@ -7,7 +8,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import css from './you-tube.module.scss';
 
-const YouTube = () => {
+const YouTube = ({ backdrop }) => {
   const { moviedId } = useParams();
 
   const [youtube, setYouTube] = useState('');
@@ -70,10 +71,18 @@ const YouTube = () => {
         YouTube
       </button>
       {isOpenTeaser && (
-        <ModalTeaser youtube={youtube} onCloseTeaser={handleCloseTeaser} />
+        <ModalTeaser
+          youtube={youtube}
+          onCloseTeaser={handleCloseTeaser}
+          backdrop={backdrop}
+        />
       )}
     </>
   );
+};
+
+ModalTeaser.propTypes = {
+  backdrop: PropTypes.string.isRequired,
 };
 
 export default YouTube;
