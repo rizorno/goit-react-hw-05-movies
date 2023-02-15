@@ -40,7 +40,11 @@ const MovieItem = ({ moviesList }) => {
           <img
             className={css['content__img']}
             data-id={id}
-            src={`https://image.tmdb.org/t/p/original/${poster_path}`}
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/original/${poster_path}`
+                : 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/No_photo_available.svg/800px-No_photo_available.svg.png'
+            }
             alt={title}
           />
           <div className={css['box-description']}>
