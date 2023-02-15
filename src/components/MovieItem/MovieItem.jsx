@@ -33,10 +33,7 @@ const MovieItem = ({ moviesList }) => {
 
     return (
       <li key={id} className={css['content__item']} data-id={id}>
-        <Link
-          to={location.pathname === '/' ? `movies/${id}` : `${id}`}
-          state={{ from: location }}
-        >
+        <Link to={`/movies/${id}`} state={{ from: location }}>
           <img
             className={css['content__img']}
             data-id={id}

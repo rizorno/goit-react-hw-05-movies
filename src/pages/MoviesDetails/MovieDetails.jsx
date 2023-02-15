@@ -50,7 +50,7 @@ const MovieDetails = () => {
   //* Votes: round and separation of thousandths
 
   let vote;
-  if (vote_average) {
+  if (vote_count) {
     vote = Math.round(vote_count);
     let xVC = String(vote);
     let sVC = xVC.split('');
@@ -62,23 +62,6 @@ const MovieDetails = () => {
       let rVC = sVC.join('');
       vote = rVC;
     }
-  }
-
-  //* Popularity: round and separation of thousandths
-
-  let popular;
-  if (popularity) {
-    popular = Math.round(popularity);
-    //  let xP = String(popular);
-    //  let sP = xP.split('');
-    //  let indexP = xP.length - 1;
-    //  let wP = Math.floor(indexP / 3);
-    //  for (let i = 1; i <= wP; i += 1) {
-    //    indexP = indexP - 1 - i;
-    //    sP.splice(indexP, 0, ' ');
-    //    let rP = sP.join('');
-    //    popular = rP;
-    //  }
   }
 
   //* Genres
@@ -142,14 +125,17 @@ const MovieDetails = () => {
                 <span className={css['span-color']}>
                   {Number(vote_average).toFixed(1)}
                 </span>
-                / <span className={css['span-nocolor']}>{vote}</span>
+                /{' '}
+                <span className={css['span-nocolor']}>
+                  {vote_count ? vote : 0}
+                </span>
               </p>
               <p
                 className={
                   (css['title-type'], css['title-type--height'], css['b1'])
                 }
               >
-                {popular}
+                {popularity ? Math.round(popularity) : 0}
               </p>
 
               <p

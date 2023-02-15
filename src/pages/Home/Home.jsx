@@ -79,41 +79,29 @@ const Home = () => {
   return (
     <main>
       <div className={css['box-btn-home']}>
-        {status === FETCH_STATUS.trending || status === FETCH_STATUS.home ? (
-          <button
-            name="trending"
-            onClick={handleChangeTrending}
-            className={css['header-btn-home--current']}
-          >
-            Trending today
-          </button>
-        ) : (
-          <button
-            name="trending"
-            onClick={handleChangeTrending}
-            className={css['header-btn-home']}
-          >
-            Trending
-          </button>
-        )}
+        <button
+          name="trending"
+          onClick={handleChangeTrending}
+          className={
+            status === FETCH_STATUS.trending || status === FETCH_STATUS.home
+              ? css['header-btn-home--current']
+              : css['header-btn-home']
+          }
+        >
+          Trending today
+        </button>
 
-        {status === FETCH_STATUS.top ? (
-          <button
-            name="top"
-            onClick={handleChangeTop}
-            className={css['header-btn-home--current']}
-          >
-            Top rated
-          </button>
-        ) : (
-          <button
-            name="top"
-            onClick={handleChangeTop}
-            className={css['header-btn-home']}
-          >
-            Top rated
-          </button>
-        )}
+        <button
+          name="top"
+          onClick={handleChangeTop}
+          className={
+            status === FETCH_STATUS.top
+              ? css['header-btn-home--current']
+              : css['header-btn-home']
+          }
+        >
+          Top rated
+        </button>
       </div>
 
       <div className={css.content}>

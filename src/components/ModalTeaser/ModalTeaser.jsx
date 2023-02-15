@@ -7,8 +7,8 @@ import css from './modal-teaser.module.scss';
 
 const ModalTeaser = ({ youtube, onCloseTeaser, backdrop }) => {
   useEffect(() => {
-    const closeBtnEscBackdrop = ({ target, currentTarget, code }) => {
-      if (code === 'Escape' || target === currentTarget) {
+    const closeBtnEscBackdrop = ({ code }) => {
+      if (code === 'Escape') {
         onCloseTeaser();
       }
     };
@@ -20,8 +20,8 @@ const ModalTeaser = ({ youtube, onCloseTeaser, backdrop }) => {
     };
   }, [onCloseTeaser]);
 
-  const closeBtnEscBackdrop = ({ target, currentTarget, code }) => {
-    if (code === 'Escape' || target === currentTarget) {
+  const closeBtnEscBackdrop = ({ target, currentTarget }) => {
+    if (target === currentTarget) {
       onCloseTeaser();
     }
   };
