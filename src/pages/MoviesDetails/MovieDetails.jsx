@@ -14,6 +14,7 @@ const MovieDetails = () => {
   const { moviedId } = useParams();
 
   const [movieInfo, setMovieInfo] = useState({});
+  // eslint-disable-next-line no-unused-vars
   const [youTube, setYouTube] = useState('');
 
   useEffect(() => {

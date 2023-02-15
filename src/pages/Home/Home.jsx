@@ -9,6 +9,7 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import css from './home.module.scss';
 
 const Home = () => {
+  // eslint-disable-next-line no-unused-vars
   const location = useLocation();
 
   const [moviesList, setMoviesList] = useState([]);

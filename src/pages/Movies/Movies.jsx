@@ -10,6 +10,7 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import css from './movies.module.scss';
 
 const Movies = () => {
+  // eslint-disable-next-line no-unused-vars
   const location = useLocation();
 
   const [params] = useSearchParams();
