@@ -83,7 +83,8 @@
     'd d1'
     'e e1'
     'f f1'
-    'g g1';
+    'g g1'
+    'h h1';
   justify-content: start;
   align-content: start;
   justify-items: start;
@@ -120,6 +121,10 @@
   grid-area: g;
 }
 
+.h {
+  grid-area: h;
+}
+
 .a1 {
   grid-area: a1;
 }
@@ -148,13 +153,18 @@
   grid-area: g1;
 }
 
+.h1 {
+  grid-area: h1;
+}
+
 .a,
 .b,
 .c,
 .d,
 .e,
 .f,
-.g {
+.g,
+.h {
   @media screen and (min-width: 320px) {
     width: 70px;
     color: #8c8c8c;

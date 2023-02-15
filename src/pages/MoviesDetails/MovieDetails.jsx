@@ -44,6 +44,7 @@ const MovieDetails = () => {
     production_countries,
     overview,
     release_date,
+    runtime,
   } = movieInfo;
 
   //* Votes: round and separation of thousandths
@@ -123,10 +124,11 @@ const MovieDetails = () => {
               <p className={(css['title-name'], css['a'])}>Vote / Votes</p>
               <p className={(css['title-name'], css['b'])}>Popularity</p>
               <p className={(css['title-name'], css['c'])}>Original Title</p>
-              <p className={(css['title-name'], css['d'])}>Genre</p>
-              <p className={(css['title-name'], css['e'])}>Country</p>
-              <p className={(css['title-name'], css['f'])}>Year</p>
-              <p className={(css['title-name'], css['g'])}>Teaser</p>
+              <p className={(css['title-name'], css['d'])}>Runtime</p>
+              <p className={(css['title-name'], css['e'])}>Genre</p>
+              <p className={(css['title-name'], css['f'])}>Country</p>
+              <p className={(css['title-name'], css['g'])}>Year</p>
+              <p className={(css['title-name'], css['h'])}>Teaser</p>
 
               <p
                 className={
@@ -153,16 +155,17 @@ const MovieDetails = () => {
               >
                 {original_title}
               </p>
-              <p className={(css['title-type'], css['d1'])}>{movieGenres}</p>
-              <p className={(css['title-type'], css['e1'])}>{originCountry}</p>
+              <p className={(css['title-type'], css['d1'])}>{runtime} min</p>
+              <p className={(css['title-type'], css['e1'])}>{movieGenres}</p>
+              <p className={(css['title-type'], css['f1'])}>{originCountry}</p>
               <p
                 className={
-                  (css['title-type'], css['title-type--height'], css['f1'])
+                  (css['title-type'], css['title-type--height'], css['g1'])
                 }
               >
                 {String(release_date).slice(0, 4)}
               </p>
-              <p className={(css['title-type'], css['g1'])}>
+              <p className={(css['title-type'], css['h1'])}>
                 <YouTube backdrop={backdrop} />
               </p>
             </div>
