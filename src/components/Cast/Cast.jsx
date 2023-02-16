@@ -58,7 +58,11 @@ const Cast = () => {
     );
   });
 
-  return <ul className={css['cast-box-wrapper']}>{elements}</ul>;
+  return (
+    <>
+      <ul className={css['cast-box-wrapper']}>{elements}</ul>
+    </>
+  );
 };
 
 export default Cast;

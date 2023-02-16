@@ -5,6 +5,7 @@ import { getKeyword, getGenres } from '../../services/moviesAPI';
 import { save, load } from '../../constants/LS';
 import MovieItem from '../../components/MovieItem/MovieItem';
 import SearchForm from '../../components/SearchForm/SearchForm';
+import GoUp from '../../components/GoUp/GoUp';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import css from './movies.module.scss';
@@ -76,6 +77,7 @@ const Movies = () => {
           </ul>
         </div>
       </div>
+      {moviesList.length > 0 ? <GoUp /> : <></>}
     </main>
   );
 };

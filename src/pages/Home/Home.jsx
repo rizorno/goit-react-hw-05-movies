@@ -5,6 +5,7 @@ import { FETCH_STATUS } from '../../constants/fetchStatus';
 import { save } from '../../constants/LS';
 import { getTrending, getTop, getGenres } from '../../services/moviesAPI';
 import MovieItem from '../../components/MovieItem/MovieItem';
+import GoUp from '../../components/GoUp/GoUp';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import css from './home.module.scss';
 
@@ -111,6 +112,7 @@ const Home = () => {
           </ul>
         </div>
       </div>
+      {moviesList.length > 0 ? <GoUp /> : <></>}
     </main>
   );
 };

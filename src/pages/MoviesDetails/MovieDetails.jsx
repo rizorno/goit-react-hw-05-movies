@@ -4,6 +4,7 @@ import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { load } from '../../constants/LS';
 import { getById } from '../../services/moviesAPI';
 import GoBack from '../../components/GoBack/GoBack';
+import GoUp from '../../components/GoUp/GoUp';
 import YouTube from '../../components/YouTube/YouTube';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import css from './movie-details.module.scss';
@@ -196,6 +197,7 @@ const MovieDetails = () => {
                 follback={<div className={css['box-loading']}>Loading...</div>}
               >
                 <Outlet />
+                <GoUp />
               </Suspense>
             </div>
           </div>
